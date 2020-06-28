@@ -2,7 +2,7 @@
 This script can send files to a Remote server using the Port Forwarding. We have used the Pyngrok and some other modules. 
 Run this command before using this file:
 ```
-pip3 install -r requirement.txt
+pip3 install -r requirements.txt
 ```
 ### Actions - send, receive
 
