@@ -11,5 +11,6 @@ Send - let you send multiple files at the same time to a remote server even if y
 Receive - let you receive any file from a remote Server with three different options. ( Netcat, Wget, Curl )
 
 I Will keep updating the script. 
-## Donate - +91 7014362046 (PayTM)
+## Donate - +91 9828654788 (PayTM)
+## Contact - Luckythandel28@gmail.com
 ###### Note - Only tested on Kali Linux.
