@@ -1,5 +1,5 @@
 # LuckyPorter.py
-This script can send files to a Remote server using the Port Forwarding. We have used the Pyngrok and some other modules. 
+This script can send files to a Remote server/Local server using the Port Forwarding and recieve files from a Remote server/Local server. 
 Run this command before using this file:
 ```
 pip3 install -r requirements.txt
