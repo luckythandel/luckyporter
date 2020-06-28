@@ -69,7 +69,7 @@ def sendrev():
         ---Actions---
     
     (1.) Send
-    (2.) Recieve
+    (2.) Receive
     (3.) Exit
     Choose one - [1,2,3]
     \n==> ''')
@@ -112,13 +112,7 @@ def sendrev():
             
     elif askforsr == "2":
         print("\nYou have chosed to recieve files\n")
-        prYellow('''       
-                             ###WARNING###
-        Script won't check if the File exist or if the host is down or not.
-        You will need to check it yourself. provide correct information to 
-        downlaod the files.
-        
-        ''')
+
         prGreen("What would you like to use to recieve File.")     
         
         ques2 = input('''
@@ -132,6 +126,13 @@ def sendrev():
         ques3 = input("\nFile name to saved as\n==> ")
         
         if ques2 == "1":
+            prYellow('''       
+                             ###WARNING###
+        Script won't check if the File exist or if the host is down or not.
+        You will need to check it yourself. provide correct information to 
+        downlaod the files.
+        
+            ''')
             token = input("[+] Ngrok Token\n==> ")
             ngrok.set_auth_token(token)
             ques5 = input("\nPort\n==> ")
