@@ -1,6 +1,6 @@
 # LuckyPorter.py
 This script can send files to a Remote server/Local server using the Port Forwarding and recieve files from a Remote server/Local server. 
-Run this command before using this file:
+Run this command before using this script:
 ```
 pip3 install -r requirements.txt
 ```
@@ -16,4 +16,4 @@ $ Receive - let you receive any file from a remote Server with three different o
 I Will keep updating the script. 
 ## Donate - +91 9828654788 (PayTM)
 ## Contact - Luckythandel28@gmail.com
-###### Note - Only tested on Kali Linux.
+###### Note - tested on Kali Linux.
