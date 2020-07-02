@@ -1,4 +1,4 @@
-from pyngrok
+pyngrok
 keyboard
 readline
 glob
