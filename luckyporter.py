@@ -24,17 +24,12 @@ def prBlack(skk): print("\033[98m {}\033[00m" .format(skk))
 def complete(text, state):
     return (glob.glob(text+'*')+[None])[state]
 
-readline.set_completer_delims(' \t\n;')
-readline.parse_and_bind("tab: complete")
-readline.set_completer(complete)
-##### END HERE ####
-
 
 
 file_holder = []
 command_list = []
 weblist = []
-
+show_files = []
 
 
 #check Ngrok token
@@ -55,9 +50,7 @@ HTTP Server : {new_ip}
 Hope, you have specified a right path or paths.
 
     ''')
-
-    while True:
-        intrupt()
+    intrupt(weblist)
 
 
 # A function to send or to recive Files
@@ -65,6 +58,7 @@ def sendrev():
     global askforsr
     global port
     global new_ip
+    
     askforsr = input(f'''
         ---Actions---
     
@@ -77,37 +71,44 @@ def sendrev():
         
         port = input("\n[+] Port\n==> ")
         new_ip = ngrok.connect(port, "http")
+        #TAB AUTO Complete
+        readline.set_completer_delims(' \t\n;')
+        readline.parse_and_bind("tab: complete")
+        readline.set_completer(complete)
         filenames = input("\n[+] FILENAME: ")
+        #END
         if len(filenames) == 0:
+        
             prRed("Not valid Input, Try again.\n")
             sendrev()
+        
         else:
             
             print("Your files have been selected!")
             splited_files = filenames.split(" ")
-
+                      
             for one_file in range(0,len(splited_files[:])):
-                prGreen(f"Your files are: {splited_files[one_file]}\n")           
+                
                 file_holder.append(splited_files[one_file])
-
                 web_file = os.path.basename(splited_files[one_file])
-                weblist.append(web_file)
+                weblist.append(web_file)                
+                prGreen(f"Your file is: {weblist[one_file]}\n")
+                new_file = file_holder[one_file]
+                os.system(f"cp -r {new_file} /var/www/html")
+                global realfile
+                realfile = weblist[one_file]
                 
-                
-                for move in range(0, len(file_holder)):
-                    new_file = file_holder[move]
-                    
-                    os.system(f"cp -r {new_file} /var/www/html")
-
-                    global realfile
-                    realfile = weblist[move]
-                    Command1 = f'''
-    [+] Run This Command On The Server 
+                Command1 = f'''
+   [+] Run This Command On The Server 
     ==> wget {new_ip}/{realfile}      
                     '''
                     
-                    prLightPurple(Command1)
-                    http_server()
+
+                prLightPurple(Command1)
+                
+            else:
+
+                http_server()
             
             
     elif askforsr == "2":
@@ -184,14 +185,21 @@ def sendrev():
         exit(0)
 
 
-def intrupt():
+def intrupt(arg1):
   
-    if keyboard.is_pressed("q"):
-        os.system(f"rm {realfile}")
-        
-        prYellow("\n[+] All the files have been removed from the /var/www/html\n")
-        ngrok.kill()
-        exit(0)
+    while True:
+
+        if keyboard.is_pressed("q"):
+            
+            for remove_file in range(0,len(arg1[:])):
+                print(arg1[remove_file])
+                os.chdir("/var/www/html")
+                os.system('pwd')
+                os.system(f"rm -r {arg1[remove_file]}")
+
+            prYellow("\n[+] All the files have been removed from the /var/www/html\n")
+            ngrok.kill()
+            exit(0)
          
             
 
