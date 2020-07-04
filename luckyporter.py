@@ -19,7 +19,7 @@ def prPurple(skk): print("\033[95m {}\033[00m" .format(skk))
 def prCyan(skk): print("\033[96m {}\033[00m" .format(skk)) 
 def prLightGray(skk): print("\033[97m {}\033[00m" .format(skk)) 
 def prBlack(skk): print("\033[98m {}\033[00m" .format(skk)) 
-
+def prHighLight(skk): print("\033[103m {}\033[00m" .format(skk))
 ##Auto dir complete ##
 def complete(text, state):
     return (glob.glob(text+'*')+[None])[state]
@@ -59,6 +59,7 @@ def sendrev():
     global port
     global new_ip
     
+    prHighLight("    @Luckythandel")
     askforsr = input(f'''
         ---Actions---
     
