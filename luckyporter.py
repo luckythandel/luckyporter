@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 #!/bin/python3
 from pyngrok import ngrok
 import os
@@ -214,7 +212,3 @@ sendrev()
 
 
 
-
-        
-        
->>>>>>> 548c0b14feec18009f7a0c93e48ff2fbccc4487d
