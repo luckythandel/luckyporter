@@ -1,6 +1,8 @@
-# LuckyPorter.py
-This script can send files to a Remote server/Local server using the Port Forwarding and recieve files from a Remote server/Local server. 
-Run this command before using this script:
+# LuckyPorter
+Luckyporter is works upon ngrok which is used to expose a local service to others (over the internet). Luckyporter shares files to other systems using port forwarding
+It works best in a scenrio where you want to share a file to your friend who is not in your local area network. Luckyporter can send multipal files 
+
+
 ```
 pip3 install -r requirements.txt
 ```
@@ -13,7 +15,3 @@ $ Receive - let you receive any file from a remote Server with three different o
 ![Receive Image 1](https://github.com/luckythandel/luckyporter/blob/master/Screenshots/receive.png)
 
 
-I Will keep updating the script. 
-## Donate - +91 9828654788 (PayTM)
-## Contact - Luckythandel28@gmail.com
-###### Note - tested on Kali Linux.

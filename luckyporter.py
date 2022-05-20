@@ -59,7 +59,7 @@ def sendrev():
     global port
     global new_ip
     
-    prHighLight("    @Luckythandel")
+    prPurple("@luckythandel")
     askforsr = input(f'''
         ---Actions---
     
